@@ -1,0 +1,6 @@
+framework module Pods_SwinjectDependencyInjection {
+  umbrella header "Pods-SwinjectDependencyInjection-umbrella.h"
+
+  export *
+  module * { export * }
+}
