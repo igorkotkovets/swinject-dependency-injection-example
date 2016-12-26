@@ -6,8 +6,8 @@
 //  Copyright © 2016 Igor Kotkovets. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol DetailsAssemblerInput {
-    
+    func detailsView() -> UIViewController
 }

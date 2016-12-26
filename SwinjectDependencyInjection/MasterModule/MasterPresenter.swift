@@ -11,4 +11,8 @@ import Foundation
 class MasterPresenter: MasterViewOutput {
     weak var view: MasterViewInput?
     var router: MasterRouterInput?
+    
+    func didTapOpenDetails() {
+        router?.openDetails()
+    }
 }

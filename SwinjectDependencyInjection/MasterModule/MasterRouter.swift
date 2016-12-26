@@ -10,4 +10,9 @@ import UIKit
 
 class MasterRouter: MasterRouterInput {
     var view: UIViewController?
+    var detailsAssembler: DetailsAssemblerInput?
+    
+    func openDetails() {
+        view?.present((detailsAssembler?.detailsView())!, animated: true, completion: nil)
+    }
 }

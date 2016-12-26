@@ -23,10 +23,11 @@ class DetailsAssembly: Assembly {
                 presenter.router = r.resolve(DetailsRouterInput.self)
         }
         
-        container.register(DetailsRouterInput.self) { r in DetailsRouter() }
-            .initCompleted { r, i in
-                let router = i as! DetailsRouter
-                router.view = r.resolve(DetailsViewInput.self) as! UIViewController?
+        container.register(DetailsRouterInput.self) { r in
+            let router = DetailsRouter()
+            router.view = r.resolve(DetailsViewInput.self) as! UIViewController?
+            
+            return router
         }
     }
 }

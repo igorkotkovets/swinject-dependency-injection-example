@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4BB6E38F35FCFD0BDC57AAA0 /* Pods_SwinjectDependencyInjectionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20655FBB07C02F214D7B2FF0 /* Pods_SwinjectDependencyInjectionUITests.framework */; };
 		A4C5AB7589E04C1B2FFCB43F /* Pods_SwinjectDependencyInjectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688954551CEA4BC97CF46D10 /* Pods_SwinjectDependencyInjectionTests.framework */; };
+		D83A5E1A1E1142A2002A2470 /* ServiceLocatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A5E191E1142A2002A2470 /* ServiceLocatorAssembly.swift */; };
 		D850A81B1E0E9E6C0042A260 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850A81A1E0E9E6C0042A260 /* AppDelegate.swift */; };
 		D850A8221E0E9E6C0042A260 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D850A8211E0E9E6C0042A260 /* Assets.xcassets */; };
 		D850A8251E0E9E6C0042A260 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D850A8231E0E9E6C0042A260 /* LaunchScreen.storyboard */; };
@@ -64,6 +65,7 @@
 		8E39BDCEA9AAE53A01CC11D1 /* Pods-SwinjectDependencyInjectionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwinjectDependencyInjectionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwinjectDependencyInjectionTests/Pods-SwinjectDependencyInjectionTests.release.xcconfig"; sourceTree = "<group>"; };
 		B153C9FBCD4EBA97663F7120 /* Pods-SwinjectDependencyInjection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwinjectDependencyInjection.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwinjectDependencyInjection/Pods-SwinjectDependencyInjection.release.xcconfig"; sourceTree = "<group>"; };
 		D7E7340683CDA8A1075F6F65 /* Pods_SwinjectDependencyInjection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwinjectDependencyInjection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D83A5E191E1142A2002A2470 /* ServiceLocatorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocatorAssembly.swift; sourceTree = "<group>"; };
 		D850A8171E0E9E6C0042A260 /* SwinjectDependencyInjection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwinjectDependencyInjection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D850A81A1E0E9E6C0042A260 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D850A8211E0E9E6C0042A260 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -174,8 +176,9 @@
 			isa = PBXGroup;
 			children = (
 				D850A8721E0EA7440042A260 /* DetailsModule */,
-				D850A8481E0E9FA70042A260 /* Master */,
+				D850A8481E0E9FA70042A260 /* MasterModule */,
 				D850A81A1E0E9E6C0042A260 /* AppDelegate.swift */,
+				D83A5E191E1142A2002A2470 /* ServiceLocatorAssembly.swift */,
 				D850A8211E0E9E6C0042A260 /* Assets.xcassets */,
 				D850A8231E0E9E6C0042A260 /* LaunchScreen.storyboard */,
 				D850A8261E0E9E6C0042A260 /* Info.plist */,
@@ -201,7 +204,7 @@
 			path = SwinjectDependencyInjectionUITests;
 			sourceTree = "<group>";
 		};
-		D850A8481E0E9FA70042A260 /* Master */ = {
+		D850A8481E0E9FA70042A260 /* MasterModule */ = {
 			isa = PBXGroup;
 			children = (
 				D850A84A1E0E9FBC0042A260 /* MasterViewInput.swift */,
@@ -215,7 +218,6 @@
 				D850A8581E0EA03E0042A260 /* MasterViewController.xib */,
 				D850A85C1E0EA3E60042A260 /* MasterRouter.swift */,
 			);
-			name = Master;
 			path = MasterModule;
 			sourceTree = "<group>";
 		};
@@ -537,6 +539,7 @@
 				D850A8831E0EA7440042A260 /* DetailsViewController.swift in Sources */,
 				D850A87F1E0EA7440042A260 /* DetailsAssembly.swift in Sources */,
 				D850A8571E0EA0330042A260 /* MasterViewController.swift in Sources */,
+				D83A5E1A1E1142A2002A2470 /* ServiceLocatorAssembly.swift in Sources */,
 				D850A84D1E0E9FC60042A260 /* MasterViewOutput.swift in Sources */,
 				D850A84B1E0E9FBC0042A260 /* MasterViewInput.swift in Sources */,
 				D850A81B1E0E9E6C0042A260 /* AppDelegate.swift in Sources */,

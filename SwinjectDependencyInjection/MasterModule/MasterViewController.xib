@@ -25,9 +25,18 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuq-wO-faE">
+                    <rect key="frame" x="145.5" y="582" width="84" height="30"/>
+                    <state key="normal" title="open details"/>
+                    <connections>
+                        <action selector="openDetailsTapped:" destination="-1" eventType="touchUpInside" id="AXn-lM-xnK"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="0.71764705880000002" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="wuq-wO-faE" secondAttribute="bottom" constant="55" id="ZOL-hk-Ttb"/>
+                <constraint firstItem="wuq-wO-faE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bV4-hF-a8Q"/>
                 <constraint firstItem="GBj-kw-NCR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eMq-Hb-4i5"/>
                 <constraint firstItem="GBj-kw-NCR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fWf-X7-Urk"/>
             </constraints>

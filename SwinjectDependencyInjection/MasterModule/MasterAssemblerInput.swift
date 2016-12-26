@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol MasterAssemblerInput {
+protocol MasterAssemblerInput: class {
     func masterView() -> UIViewController
 }

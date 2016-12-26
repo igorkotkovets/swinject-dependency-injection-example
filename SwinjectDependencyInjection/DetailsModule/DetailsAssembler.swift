@@ -11,11 +11,11 @@ import Swinject
 class DetailsAssembler: DetailsAssemblerInput {
     private let assembler: Assembler
     
-    init(parentAssembler: Assembler) {
-        assembler = try! Assembler(assemblies: [MasterAssembly()], parentAssembler: parentAssembler)
+    init() {
+        assembler = try! Assembler(assemblies: [DetailsAssembly()])
     }
     
-    func masterView() -> UIViewController {
-        return assembler.resolver.resolve(MasterViewInput.self)! as! UIViewController
+    func detailsView() -> UIViewController {
+        return assembler.resolver.resolve(DetailsViewInput.self)! as! UIViewController
     }
 }

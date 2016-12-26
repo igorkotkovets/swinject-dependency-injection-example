@@ -9,6 +9,8 @@
 import Swinject
 
 class MasterAssembly: Assembly {
+    static public let KEY = "master"
+    
     func assemble(container: Container) {
         container.register(MasterViewInput.self) { r in
             let controller = MasterViewController(nibName: "MasterViewController", bundle: nil)
@@ -27,6 +29,9 @@ class MasterAssembly: Assembly {
             .initCompleted { r, i in
                 let router = i as! MasterRouter
                 router.view = r.resolve(MasterViewInput.self) as! UIViewController?
+                router.detailsAssembler = r.resolve(DetailsAssemblerInput.self)
         }
+        
+        container.register(DetailsAssemblerInput.self) { r in DetailsAssembler() }
     }
 }

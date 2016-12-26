@@ -9,5 +9,5 @@
 import Foundation
 
 protocol MasterViewOutput {
-    
+    func didTapOpenDetails()
 }

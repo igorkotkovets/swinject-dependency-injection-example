@@ -12,4 +12,8 @@ class MasterViewController: UIViewController, MasterViewInput {
     var output: MasterViewOutput?
     
 
+    // MARK: Button Action
+    @IBAction func openDetailsTapped(_ button: UIButton) {
+        output?.didTapOpenDetails()
+    }
 }
