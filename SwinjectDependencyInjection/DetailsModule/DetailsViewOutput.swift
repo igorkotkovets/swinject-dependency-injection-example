@@ -9,5 +9,6 @@
 import Foundation
 
 protocol DetailsViewOutput {
-    
+    func didTriggerViewDidLoad()
+    func didTapClose()
 }

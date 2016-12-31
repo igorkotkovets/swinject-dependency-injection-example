@@ -17,17 +17,24 @@ class DetailsAssembly: Assembly {
         }
         
         container.register(DetailsViewOutput.self) { r in DetailsPresenter() }
-            .initCompleted { r, i in
-                let presenter = i as! DetailsPresenter
-                presenter.view = r.resolve(DetailsViewInput.self)
-                presenter.router = r.resolve(DetailsRouterInput.self)
+        .initCompleted { r, i in
+            let presenter = i as! DetailsPresenter
+            presenter.view = r.resolve(DetailsViewInput.self)
+            presenter.router = r.resolve(DetailsRouterInput.self)
+            presenter.interactor = r.resolve(DetailsInteractorInput.self)
         }
         
-        container.register(DetailsRouterInput.self) { r in
-            let router = DetailsRouter()
+        container.register(DetailsRouterInput.self) { r in DetailsRouter() }
+        .initCompleted { r, i in
+            let router = i as! DetailsRouter
             router.view = r.resolve(DetailsViewInput.self) as! UIViewController?
-            
-            return router
         }
+        
+        container.register(DetailsInteractorInput.self) { r in DetailsInteractor() }
+        .initCompleted { r, i in
+            let interactor = i as! DetailsInteractor
+            interactor.output = r.resolve(DetailsViewOutput.self) as? DetailsInteractorOutput
+            interactor.downloader = r.resolve(FilesDownloaderInterface.self)
+        }        
     }
 }

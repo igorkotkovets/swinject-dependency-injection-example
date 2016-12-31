@@ -10,4 +10,19 @@ import UIKit
 
 class DetailsViewController: UIViewController, DetailsViewInput {
     var output: DetailsViewOutput?
+    @IBOutlet weak var progressLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        output?.didTriggerViewDidLoad()
+    }
+    
+    func displayProgress(_ progress: String) {
+        progressLabel.text = progress
+    }
+    
+    @IBAction func onCloseTap(sender: AnyObject) {
+        output?.didTapClose()
+    }
 }

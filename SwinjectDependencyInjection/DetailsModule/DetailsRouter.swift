@@ -10,4 +10,8 @@ import UIKit
 
 class DetailsRouter: DetailsRouterInput {
     var view: UIViewController?
+    
+    func close() {
+        view?.dismiss(animated: true, completion: nil)
+    }
 }

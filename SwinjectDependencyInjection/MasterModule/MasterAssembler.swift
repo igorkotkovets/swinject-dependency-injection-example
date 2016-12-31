@@ -11,8 +11,8 @@ import Swinject
 class MasterAssembler: MasterAssemblerInput {
     private let assembler: Assembler
     
-    init(serviceLocatorAssembler: Assembler) {
-        assembler = try! Assembler(assemblies: [MasterAssembly()], parentAssembler: serviceLocatorAssembler)
+    init(parentAssembler: Assembler) {
+        assembler = try! Assembler(assemblies: [MasterAssembly()], parentAssembler: parentAssembler)
     }
     
     func masterView() -> UIViewController {

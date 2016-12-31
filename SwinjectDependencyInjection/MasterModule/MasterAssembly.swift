@@ -32,6 +32,10 @@ class MasterAssembly: Assembly {
                 router.detailsAssembler = r.resolve(DetailsAssemblerInput.self)
         }
         
-        container.register(DetailsAssemblerInput.self) { r in DetailsAssembler() }
+        container.register(ServiceLocatorAssembler.self) { r in
+            ServiceLocatorAssembler.sharedInstance
+        }
+        
+        container.register(DetailsAssemblerInput.self) { r in DetailsAssembler(parentAssembler: r.resolve(ServiceLocatorAssembler.self)!.assemlber) }
     }
 }

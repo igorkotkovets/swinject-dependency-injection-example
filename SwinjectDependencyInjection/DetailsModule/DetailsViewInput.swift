@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DetailsViewInput: class {
-    
+    func displayProgress(_ progress: String)
 }

@@ -16,6 +16,9 @@ class ServiceLocatorAssembly: Assembly {
         container.register(Assembler.self, name: ServiceLocatorAssembly.KEY) { _ in
             Assembler()
         }
-
+        
+        container.register(FilesDownloaderInterface.self) { _ in
+            FilesDownloader()
+        }
     }
 }

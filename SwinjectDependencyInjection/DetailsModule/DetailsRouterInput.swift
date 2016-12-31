@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DetailsRouterInput {
-    
+    func close()
 }

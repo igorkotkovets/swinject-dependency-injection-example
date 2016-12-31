@@ -11,8 +11,8 @@ import Swinject
 class DetailsAssembler: DetailsAssemblerInput {
     private let assembler: Assembler
     
-    init() {
-        assembler = try! Assembler(assemblies: [DetailsAssembly()])
+    init(parentAssembler: Assembler) {
+        assembler = try! Assembler(assemblies: [DetailsAssembly()], parentAssembler: parentAssembler)
     }
     
     func detailsView() -> UIViewController {

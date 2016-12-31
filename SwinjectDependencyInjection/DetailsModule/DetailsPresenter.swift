@@ -6,9 +6,22 @@
 //  Copyright © 2016 Igor Kotkovets. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class DetailsPresenter: DetailsViewOutput {
+class DetailsPresenter: DetailsViewOutput, DetailsInteractorOutput {
     weak var view: DetailsViewInput?
     var router: DetailsRouterInput?
+    var interactor: DetailsInteractorInput?
+    
+    func didTriggerViewDidLoad() {
+        interactor?.trackDownloadingProgress()
+    }
+    
+    func downloadingFilesWith(progress: CGFloat) {
+        view?.displayProgress(String(format:  "%0.1f%", progress))
+    }
+    
+    func didTapClose() {
+        router?.close()
+    }
 }

@@ -13,16 +13,15 @@ import Swinject
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    var serviceLocatorAssembler: Assembler? = try! Assembler(assemblies: [ServiceLocatorAssembly()])
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()
         self.window = window
-        
-        window.rootViewController = UINavigationController.init(rootViewController: MasterAssembler(serviceLocatorAssembler: serviceLocatorAssembler!).masterView())
+    
+        let navigationController = UINavigationController.init(rootViewController: MasterAssembler(parentAssembler: ServiceLocatorAssembler.sharedInstance.assemlber).masterView())
+        navigationController.setNavigationBarHidden(false, animated: false)
+        window.rootViewController = navigationController
         
         return true
     }

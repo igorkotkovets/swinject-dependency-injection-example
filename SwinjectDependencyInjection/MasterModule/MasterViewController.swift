@@ -9,8 +9,7 @@
 import UIKit
 
 class MasterViewController: UIViewController, MasterViewInput {
-    var output: MasterViewOutput?
-    
+    var output: MasterViewOutput?    
 
     // MARK: Button Action
     @IBAction func openDetailsTapped(_ button: UIButton) {
