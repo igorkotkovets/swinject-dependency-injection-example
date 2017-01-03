@@ -10,7 +10,7 @@ import UIKit
 
 class DetailsInteractor: DetailsInteractorInput, FilesDownloaderDelegate {
     var downloader: FilesDownloaderInterface?
-    var output: DetailsInteractorOutput?
+    weak var output: DetailsInteractorOutput?
     
     func trackDownloadingProgress() {
         downloader?.setDelegate(self)

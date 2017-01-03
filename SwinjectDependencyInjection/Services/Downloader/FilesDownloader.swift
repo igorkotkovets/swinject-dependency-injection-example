@@ -13,6 +13,10 @@ class FilesDownloader: FilesDownloaderInterface {
     private weak var delegate: FilesDownloaderDelegate?
     private(set) var progress: CGFloat = 0.0
     
+    deinit {
+        print("deinig FilesDownloader")
+    }
+    
     func setDelegate(_ delegate: FilesDownloaderDelegate) {
         self.delegate = delegate
     }
@@ -32,7 +36,7 @@ class FilesDownloader: FilesDownloaderInterface {
     }
     
     @objc func timerFire(timer: Timer) {
-        progress += 0.1
+        progress += 1.1
         delegate?.didDownloadWith(progress)
         
         if (progress >= 100.0) {

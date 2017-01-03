@@ -19,6 +19,6 @@ class ServiceLocatorAssembly: Assembly {
         
         container.register(FilesDownloaderInterface.self) { _ in
             FilesDownloader()
-        }
+        }.inObjectScope(.weak)
     }
 }

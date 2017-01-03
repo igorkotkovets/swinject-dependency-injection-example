@@ -9,7 +9,7 @@
 import UIKit
 
 class MasterRouter: MasterRouterInput {
-    var view: UIViewController?
+    weak var view: UIViewController?
     var detailsAssembler: DetailsAssemblerInput?
     
     func openDetails() {

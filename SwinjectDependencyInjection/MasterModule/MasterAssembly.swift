@@ -12,10 +12,10 @@ class MasterAssembly: Assembly {
     static public let KEY = "master"
     
     func assemble(container: Container) {
-        container.register(MasterViewInput.self) { r in
-            let controller = MasterViewController(nibName: "MasterViewController", bundle: nil)
+        container.register(MasterViewInput.self) { r in MasterViewController(nibName: "MasterViewController", bundle: nil) }
+        .initCompleted { r, i in
+            let controller = i as! MasterViewController
             controller.output = r.resolve(MasterViewOutput.self)
-            return controller
         }
         
         container.register(MasterViewOutput.self) { r in MasterPresenter() }

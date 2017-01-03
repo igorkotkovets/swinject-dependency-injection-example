@@ -11,9 +11,11 @@ import Swinject
 class DetailsAssembly: Assembly {
     func assemble(container: Container) {
         container.register(DetailsViewInput.self) { r in
-            let controller = DetailsViewController(nibName: "DetailsViewController", bundle: nil)
+            DetailsViewController(nibName: "DetailsViewController", bundle: nil)
+        }
+        .initCompleted { r, i in
+            let controller = i as! DetailsViewController
             controller.output = r.resolve(DetailsViewOutput.self)
-            return controller
         }
         
         container.register(DetailsViewOutput.self) { r in DetailsPresenter() }
@@ -35,6 +37,6 @@ class DetailsAssembly: Assembly {
             let interactor = i as! DetailsInteractor
             interactor.output = r.resolve(DetailsViewOutput.self) as? DetailsInteractorOutput
             interactor.downloader = r.resolve(FilesDownloaderInterface.self)
-        }        
+        }
     }
 }

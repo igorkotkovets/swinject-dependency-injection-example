@@ -12,6 +12,6 @@ protocol DetailsInteractorInput {
     func trackDownloadingProgress()
 }
 
-protocol DetailsInteractorOutput {
+protocol DetailsInteractorOutput: class {
     func downloadingFilesWith(progress: CGFloat)
 }
